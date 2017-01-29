@@ -5,7 +5,7 @@
     <div class="card" ng-hide="{{loggedin}}">
       <div class="item item-text-wrap">
         برای دریافت یوزرنیم و پسورد به
-        <a href="http://bestoon.ir">سایت بستون آی آر</a>
+        <a onclick="window.open('http://bestoon.ir', '_system', 'location=yes'); return false;">سایت بستون آی آر</a>
         مراجعه کنید
       </div>
     </div>
@@ -29,6 +29,17 @@
     <button ng-click="logout()" class="button button-assertive" ng-controller="ConfigCtrl" ng-show="{{loggedin}}">
         خروج
     </button>
+
+
+      <h4 class="title">جدیدترین اخبار بستون</h1>
+
+    <div ng-controller="NewsCtrl">
+      <ul class="list" ng-repeat="n in news">
+        <li class="item item-text-wrap">
+          <b>{{n.fields.title}}</b>. {{n.fields.text}}
+        </li>
+      </ul>
+    </div>
 
   </ion-content>
 </ion-view>
